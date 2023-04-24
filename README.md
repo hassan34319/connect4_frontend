@@ -45,3 +45,5 @@ Users should be able to:
 
 Implemetation of minimax algorithm with alpha-beta pruning
 Using for CPU-intensive tasks such as minimax algorithm with high depth
+
+The backend repository can be found at : https://github.com/hassan34319/connect4_backend
