@@ -57,7 +57,7 @@ const initialState: inintialStateType = {
   winnigComb: {},
   CPULevel: 4,
   pointerColumn: '0',
-  prevMove : [null,null]
+  prevMove : null
 };
 
 const gameSlice = createSlice({
@@ -70,6 +70,7 @@ const gameSlice = createSlice({
       state.p2.name = action.payload === 'PvP' ? 'Player 2' : 'CPU';
       state.currentPlayer = state.p1.color === state.turn ? 'p1' : 'p2';
       state.gameIsRunning = true;
+      state.prevMove = null;
       let aiMove = fetch('http://127.0.0.1:5000/reset', {
         method: 'POST',
         headers: {
@@ -120,6 +121,7 @@ const gameSlice = createSlice({
       state.starterColor = state.starterColor === 'red' ? 'yellow' : 'red';
       state.currentPlayer = state.p1.color === state.turn ? 'p1' : 'p2';
       state.winner = null;
+      state.prevMove = null
       let aiMove = fetch('http://127.0.0.1:5000/reset', {
         method: 'POST',
         headers: {
@@ -138,6 +140,7 @@ const gameSlice = createSlice({
 
       state.currentPlayer = state.p1.color === state.turn ? 'p1' : 'p2';
       state.winner = null;
+      state.prevMove = null
       let aiMove = fetch('http://127.0.0.1:5000/reset', {
         method: 'POST',
         headers: {
